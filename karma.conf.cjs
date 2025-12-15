@@ -1,6 +1,8 @@
 /*
  * Copyright (c) 2025 European EPC Competence Center GmbH. All rights reserved.
  */
+const webpack = require('webpack');
+
 module.exports = function(config) {
 
   config.set({
@@ -31,6 +33,24 @@ module.exports = function(config) {
       experiments: {
         topLevelAwait: true,
       },
+      resolve: {
+        // Ignore Node.js built-in modules for browser builds
+        // This matches the package.json "browser" field configuration
+        fallback: {
+          'crypto': false,
+          'node:crypto': false
+        }
+      },
+      plugins: [
+        // Handle node: protocol imports by stripping the prefix
+        // This allows webpack to resolve them through the fallback config
+        new webpack.NormalModuleReplacementPlugin(
+          /^node:/,
+          (resource) => {
+            resource.request = resource.request.replace(/^node:/, '');
+          }
+        )
+      ]
     },
 
     // test results reporter to use
