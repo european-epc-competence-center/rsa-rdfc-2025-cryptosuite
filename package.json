@@ -8,6 +8,7 @@
     "url": "https://github.com/european-epc-competence-center/rsa-rdfc-2025-cryptosuite"
   },
   "license": "BSD-3-Clause",
+  "author": "European EPC Competence Center GmbH",
   "type": "module",
   "exports": "./lib/index.js",
   "files": [
@@ -58,7 +59,8 @@
     "coverage": "cross-env NODE_ENV=test c8 npm run test-node",
     "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly --reporter=text-summary --reporter=text npm run test-node",
     "coverage-report": "c8 report",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "node scripts/release.js"
   },
   "c8": {
     "reporter": [

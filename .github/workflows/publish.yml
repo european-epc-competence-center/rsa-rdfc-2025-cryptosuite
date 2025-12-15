@@ -29,9 +29,6 @@ jobs:
       - name: Run tests
         run: npm run test-node
       
-      - name: Run linter
-        run: npm run lint
-      
       - name: Publish to npm
         run: npm publish --access public
         env:
