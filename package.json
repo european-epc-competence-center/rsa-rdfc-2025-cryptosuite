@@ -1,6 +1,6 @@
 {
   "name": "@eecc/rsa-rdfc-2025-cryptosuite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An RSA-RDFC-2025 Data Integrity cryptosuite for use with jsonld-signatures.",
   "homepage": "https://github.com/european-epc-competence-center/rsa-rdfc-2025-cryptosuite",
   "repository": {
