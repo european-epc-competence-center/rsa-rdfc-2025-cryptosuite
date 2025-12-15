@@ -38,23 +38,14 @@
     "eslint-plugin-jsdoc": "^50.2.2",
     "eslint-plugin-unicorn": "^55.0.0",
     "jsonld-signatures": "^11.2.1",
-    "karma": "^6.4.2",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-mocha": "^2.0.1",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-sourcemap-loader": "^0.3.8",
-    "karma-webpack": "^5.0.0",
     "mocha": "^10.0.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "webpack": "^5.73.0"
+    "mocha-lcov-reporter": "^1.3.0"
   },
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "test": "npm run test-node",
-    "test-karma": "karma start karma.conf.cjs",
     "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 30000 -A -R ${REPORTER:-spec} --require test/test-mocha.js test/*.spec.js",
     "coverage": "cross-env NODE_ENV=test c8 npm run test-node",
     "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly --reporter=text-summary --reporter=text npm run test-node",
